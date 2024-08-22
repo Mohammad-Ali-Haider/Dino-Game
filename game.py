@@ -13,11 +13,6 @@ class Game:
         self.running = True
         self.current_page = MainMenu(self)
 
-        self.jump = pygame.mixer.Sound(f"assets/sfx/jump.mp3")
-        lost = pygame.mixer.Sound(f"assets/sfx/lose.mp3")
-        points = pygame.mixer.Sound(f"assets/sfx/100points.mp3")
-
-
         with open("options.txt", "r") as f:
             options = f.readlines()
             volume = float(options[0].split(' ')[1].replace('\n', ''))
