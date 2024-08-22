@@ -35,11 +35,11 @@ class App:
         running = True
         movement = True
         score = 0
-        high_score = 0
+        high_score = load_score()
 
         dino = Dino()
         grounds = [Ground(0), Ground(624*3)]
-        obsticles = [Obsticle(700)]
+        obsticles = [Obsticle(GAME_WIDTH)]
 
         while running:
             [exit() for event in pygame.event.get() if event.type == pygame.QUIT]

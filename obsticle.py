@@ -3,10 +3,9 @@ import random
 from globals import OBSTICLES, LEVELS_OF_FLIGHT, GAME_WIDTH, HIT_BOXES, lost
 
 class Obsticle:
-
     def __init__(self, x) -> None:
         self.x = x
-        self.y = 375
+        self.y = -100
         self.scaleFactor = 1.25
         self.obsticle = OBSTICLES[random.randint(0, len(OBSTICLES)-1)]
         if random.randint(1, 100) > 25:
@@ -22,7 +21,6 @@ class Obsticle:
 
     def move(self, speed):
         self.x -= speed
-        print(speed)
         self.rect = pygame.Rect((self.x, self.y-self.rect_coords[1]), (self.rect_coords))
         if self.x < -self.rect_coords[0]:
             self.y = 375
