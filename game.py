@@ -21,6 +21,7 @@ class Game:
             
 
     def switch_page(self, new_page_class):
+        
         self.current_page = new_page_class(self)
 
     def run(self):
